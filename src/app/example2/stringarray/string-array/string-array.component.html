@@ -1,0 +1,16 @@
+<form [formGroup]="arrayForm" (ngSubmit)="onSubmit()" class="flex">
+  <div formArrayName="message">
+    <h2>Введіть повідомлення</h2>
+    <button (click)="addMessage()" class="btn">Додати</button>
+    <div
+      *ngFor="let message of getControls(); let i = index"
+      class="flex flex-row flex-wrap"
+    >
+      <input type="text" formControlName="{{ i }}" />
+      <button class="btn btn-stop" (click)="deleteMessage(i)">Видалити</button>
+    </div>
+    <button type="submit" expand="block" fill="outline" class="btn">
+      Відправити
+    </button>
+  </div>
+</form>

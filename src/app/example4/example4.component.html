@@ -1,0 +1,22 @@
+<section class="flex">
+  <h2>Async pipe. Приклад 1</h2>
+  <h2>Async Hero Message and AsyncPipe</h2>
+  <p>Message: {{ message$ | async }}</p>
+  <button class="btn" (click)="resend()">Resend</button>
+  <h2>Async pipe. Приклад 2</h2>
+  <h2>Heroes from JSON File</h2>
+  <div
+    *ngFor="
+      let hero of 'https://api.jsonbin.io/v3/b/644f98ad9d312622a3556488'
+        | fetchJson
+    "
+  >
+    {{ hero.name }}
+  </div>
+  <h3>Heroes as JSON:</h3>
+  <p>
+    {{
+      "https://api.jsonbin.io/v3/b/644f98ad9d312622a3556488" | fetchJson | json
+    }}
+  </p>
+</section>

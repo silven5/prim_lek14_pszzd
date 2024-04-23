@@ -1,0 +1,52 @@
+<section class="flex">
+  <h2>Pure vs Impure pipe</h2>
+  <h2>Загальний список героїв</h2>
+  <div *ngFor="let hero of allHero">
+    <p *ngFor="let item of hero.about">
+      {{ item }}
+    </p>
+  </div>
+  <h2>Лише ті хто може літати</h2>
+  <div *ngFor="let hero of allHero | flyingHeroes">
+    <p *ngFor="let item of hero.about">
+      {{ item }}
+    </p>
+  </div>
+  <h3>Додати герояя, що вміє літати:</h3>
+  <div class="flex flex-row flex-wrap">
+    <label
+      >Ім'я
+      <input type="text" value="Грифон" #heroname />
+    </label>
+    <label
+      >Сила
+      <input type="number" value="3" #heropower />
+    </label>
+    <label
+      >Швидкість бігу
+      <input type="number" value="2" #herospeed />
+    </label>
+    <label
+      >Метод польоту
+      <input type="text" value="Крила" #herofm />
+    </label>
+    <label
+      >Швидкість польоту
+      <input type="number" value="50" #herofs />
+    </label>
+    <button
+      class="btn"
+      (click)="
+        addFlyingHero(
+          heroname.value,
+          heropower.value,
+          herofm.value,
+          herofs.value,
+          herospeed.value
+        )
+      "
+    >
+      Додати
+    </button>
+  </div>
+</section>

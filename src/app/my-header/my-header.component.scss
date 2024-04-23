@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pipe-pipe {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 260%;
+    font-weight: bolder;
+
+    animation:
+        flap 1s steps(2) infinite,
+        hover .5s ease-in-out infinite alternate;
+}
+
+.pipe-box {
+    width: 170px;
+    height: 12px;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    transition: top 1.5s;
+}
+
+.canvas {
+    background: #333;
+    overflow: hidden;
+    height: 250px;
+    cursor: pointer;
+    position: relative;
+    background: url('https://i.imgur.com/FLqikK8.png?1');
+    animation: scroll 10s linear infinite;
+    box-shadow: 0 0 10em #000;
+   
+}
+
+.pipe {
+    width: 26px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    animation: passby 30s linear infinite;
+    background: url("https://i.imgur.com/9Cxyyur.png");
+    background-position-y: -35px;
+
+}
+
+.pipe:nth-of-type(2) {
+    animation-delay: 1.5s;
+    background-position-y: 0;
+}
+
+.pipe:nth-of-type(3) {
+    animation-delay: 3s;
+    background-position-y: -115px;
+}
+
+.pipe:nth-of-type(4) {
+    animation-delay: 4.5s;
+    background-position-y: -30px;
+}
+
+@keyframes scroll {
+    to {
+        background-position-x: -144px
+    }
+}
+
+@keyframes passby {
+    to {
+        left: -10%;
+    }
+}
+
+@keyframes flap {
+    to {
+        background-position-y: -116px
+    }
+}
+
+@keyframes hover {
+    to {
+        transform: translateY(50%)
+    }
+}

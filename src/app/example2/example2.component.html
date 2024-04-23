@@ -1,0 +1,31 @@
+<section class="flex">
+  <h2>Приклади власних pipe. Приклад 1</h2>
+  <h2>Перетворення</h2>
+  <label position="floating"
+    >Введіть число <input type="number" value="2.2" #x
+  /></label>
+  <button (click)="X(x.value)" class="btn">Змінити</button>
+  <h3>Без форматування:</h3>
+  <p>{{ X(x.value) }}</p>
+  <h3>З форматуванням та парметрами:</h3>
+  <p>{{ X(x.value) | format }}</p>
+</section>
+<section class="flex">
+  <h2>Приклад 2</h2>
+  <app-string-array (messages)="newMessage($event)"></app-string-array>
+  <h3>Результат об'єдання всього масиву</h3>
+  <p>{{ message.message | message }}</p>
+  <h3>Об'єднання з параметрами</h3>
+  <h3>Визначення параметрів</h3>
+  <label position="floating"
+    >Початок інтервалу
+    <input type="number" value="2" #start />
+  </label>
+  <label position="floating"
+    >Кінець інтервалу
+    <input type="number" value="5" #end />
+  </label>
+  <button (click)="X(x.value)" class="btn">Змінити інтерфал</button>
+  <h3>Результат об'єдання</h3>
+  <p>{{ message.message | message : X(start.value) : X(end.value) }}</p>
+</section>

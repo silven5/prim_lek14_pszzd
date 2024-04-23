@@ -1,0 +1,24 @@
+<section class="flex content">
+  <h1>Вбудовані pipe</h1>
+  <h3>Без форматування:</h3>
+  <p>{{ myDate }}</p>
+  <h3>З форматуванням та парметрами:</h3>
+  <p>{{ myDate | date : "dd/MM/yyyy" }}</p>
+  <h3>Без форматування:</h3>
+  <p>{{ myNumber }}</p>
+  <h3>Форматування два знаки до коми, два після:</h3>
+  <p>{{ myNumber | number : "1.1-2" }}</p>
+  <h3>Інше форматування:</h3>
+  <p>{{ myNumber | number : "3.5-5" }}</p>
+  <h3>Без форматування:</h3>
+  <p>{{ myMoney }}</p>
+  <h3>З форматуванням та парметрами:</h3>
+  <h3>З кодом та символом:</h3>
+  <p>{{ myMoney | currency : "UAH" : "symbol-narrow" }}</p>
+  <h3>Інше форматування:</h3>
+  <p>{{ myMoney | currency : "UAH" : "symbol-narrow" : "1.1-1" }}</p>
+  <h3>Без форматування:</h3>
+  <p>{{ myText }}</p>
+  <h3>Ланцюжок:</h3>
+  <p>{{ myText | slice : 6 : 11 | uppercase }}</p>
+</section>
